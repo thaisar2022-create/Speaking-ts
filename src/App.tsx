@@ -8,17 +8,17 @@ import { useState, useRef, useEffect } from 'react';
 // ADD LESSON WEBSITE LINKS HERE ONLY. Example: 1: "https://example.com/unit-1/"
 // Unit contents are hosted separately; this home page stays lightweight.
 const DEFAULT_UNIT_LINKS: Record<number, string> = {
-  1: "",
-  2: "",
-  3: "",
-  4: "",
-  5: "",
-  6: "",
-  7: "",
-  8: "",
-  9: "",
-  10: "",
-  11: ""
+  1: "https://speaking-u1.thaisar.org/",
+  2: "https://speaking-u2.thaisar.org/",
+  3: "https://speaking-u3.thaisar.org/",
+  4: "https://speaking-u4.thaisar.org/",
+  5: "https://speaking-u5.thaisar.org/",
+  6: "https://speaking-u6.thaisar.org/",
+  7: "https://speaking-u7.thaisar.org/",
+  8: "https://speaking-u8.thaisar.org/",
+  9: "https://speaking-u9.thaisar.org/",
+  10: "https://speaking-u10.thaisar.org/",
+  11: "https://speaking-u11.thaisar.org/"
 };
 
 interface UnitItem {
@@ -46,7 +46,14 @@ export default function App() {
     try {
       const saved = localStorage.getItem('thaisar_unit_links');
       if (saved) {
-        return { ...DEFAULT_UNIT_LINKS, ...JSON.parse(saved) };
+        const parsed = JSON.parse(saved);
+        const merged = { ...DEFAULT_UNIT_LINKS };
+        for (const [k, v] of Object.entries(parsed)) {
+          if (typeof v === 'string' && v.trim()) {
+            merged[Number(k)] = v.trim();
+          }
+        }
+        return merged;
       }
     } catch {
       // Fallback to defaults
@@ -80,13 +87,8 @@ export default function App() {
   const handleUnitClick = (e: React.MouseEvent<HTMLAnchorElement>, unitId: number) => {
     const rawLink = unitLinks[unitId];
     if (typeof rawLink === 'string' && /^https?:\/\//i.test(rawLink.trim())) {
-      try {
-        const url = new URL(rawLink.trim());
-        window.open(url.href, '_blank', 'noopener,noreferrer');
-        return;
-      } catch {
-        // Fall through to show toast if URL parsing fails
-      }
+      // Valid web link: allow native anchor navigation with target="_blank"
+      return;
     }
 
     e.preventDefault();
@@ -152,6 +154,7 @@ export default function App() {
                   className="unit-card"
                   data-unit={unit.id}
                   href={href}
+                  target={isValidLink ? '_blank' : undefined}
                   onClick={(e) => handleUnitClick(e, unit.id)}
                   aria-label={`Unit ${unit.id} — ${unit.title} သင်ခန်းစာ ဝင်ရန်`}
                   rel={isValidLink ? 'noopener noreferrer' : undefined}
