@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#621a75" />
+      <stop offset="100%" stop-color="#3b0f47" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff152" />
+      <stop offset="100%" stop-color="#e0b818" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="128" cy="128" r="120" fill="url(#purpleGrad)" filter="url(#shadow)"/>
+  
+  <!-- Outer Gold Ring -->
+  <circle cx="128" cy="128" r="110" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-dasharray="8 4"/>
+  <circle cx="128" cy="128" r="102" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- Knowledge Rays / Sun -->
+  <g stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" opacity="0.6">
+    <line x1="128" y1="52" x2="128" y2="40"/>
+    <line x1="150" y1="58" x2="158" y2="48"/>
+    <line x1="106" y1="58" x2="98" y2="48"/>
+    <line x1="168" y1="74" x2="180" y2="68"/>
+    <line x1="88" y1="74" x2="76" y2="68"/>
+  </g>
+
+  <!-- Central Thai Script Motif 'ท' (Thai 'Tho Thahan' for Thai / Thaisar) stylized in gold -->
+  <!-- Stylized Elegant Open Book Base -->
+  <path d="M128 178 C115 166 85 162 58 170 C56 170.5 54 169 54 167 L54 116 C54 114 56 112.5 58 112 C86 104 116 109 128 120 C140 109 170 104 198 112 C200 112.5 202 114 202 116 L202 167 C202 169 200 170.5 198 170 C171 162 141 166 128 178 Z" fill="#ffffff" fill-opacity="0.95" />
+  <path d="M128 120 L128 178" stroke="#4d155d" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M72 130 C86 126 105 128 118 135" stroke="#ba9ac4" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M72 142 C86 138 105 140 118 147" stroke="#ba9ac4" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M184 130 C170 126 151 128 138 135" stroke="#ba9ac4" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M184 142 C170 138 151 140 138 147" stroke="#ba9ac4" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Golden Thai 'ท' and Flame on Top -->
+  <g transform="translate(104, 52) scale(0.75)">
+    <!-- Elegant stylized Thai letter ท -->
+    <path d="M22 45 C15 45 10 39 10 31 C10 22 17 16 26 16 C34 16 40 21 40 29 L40 58 C40 60 42 61 44 61 L46 61 C48 61 50 60 50 58 L50 24 C50 12 40 2 28 2 C12 2 0 14 0 31 C0 47 11 58 25 58 C29 58 33 57 37 55 L37 47 C32 50 27 50 22 45 Z" fill="url(#goldGrad)" />
+  </g>
+
+  <!-- Stars -->
+  <polygon points="128,78 130,83 135,84 131,88 132,93 128,90 124,93 125,88 121,84 126,83" fill="#ffed30"/>
+  <polygon points="68,102 69,105 72,106 70,108 70,111 68,109 66,111 66,108 64,106 67,105" fill="#ffed30"/>
+  <polygon points="188,102 189,105 192,106 190,108 190,111 188,109 186,111 186,108 184,106 187,105" fill="#ffed30"/>
+
+  <!-- Text Arc: THAISAR -->
+  <text x="128" y="208" text-anchor="middle" fill="#ffed30" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="14" letter-spacing="3.5">THAISAR</text>
+  <text x="128" y="222" text-anchor="middle" fill="#f5e6f8" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" letter-spacing="1.5">LANGUAGE SCHOOL</text>
+</svg>

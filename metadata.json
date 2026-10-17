@@ -1,0 +1,6 @@
+{
+  "name": "Thaisar - ထိုင်းစာ",
+  "description": "ထိုင်းစကားပြော သင်ခန်းစာ ၁၁ ခု - Thaisar Thai Language School mobile web app",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
